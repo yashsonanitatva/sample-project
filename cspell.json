@@ -1,7 +1,15 @@
 {
   "version": "0.1",
   "language": "en_GB",
-  "dictionaries": ["en_US", "companies", "softwareTerms", "typescript", "node", "html", "css"],
+  "dictionaries": [
+    "en_US",
+    "companies",
+    "softwareTerms",
+    "typescript",
+    "node",
+    "html",
+    "css"
+  ],
   "ignorePaths": [
     "package.json",
     "node_modules/**",
