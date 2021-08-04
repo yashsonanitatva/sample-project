@@ -43,6 +43,11 @@ module.exports.setGenerator = function (plop) {
         },
         {
           type: 'add',
+          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          templateFile: 'generate/component/templates/story.hbs',
+        },
+        {
+          type: 'add',
           path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.models.tsx',
           templateFile: 'generate/component/templates/models.hbs',
         },

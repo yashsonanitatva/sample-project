@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/react/types-6-0';
+
+import { templateForComponent } from '@lib/templateHelper';
+
+import {{pascalCase name}} from './{{pascalCase name}}';
+
+const meta: Meta = {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+};
+
+export default meta;
+
+const template = templateForComponent({{pascalCase name}}, {
+  layout: 'padded',
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/…',
+  },
+  sharedProps: {
+    firstProp: 'a',
+  },
+});
+
+export const Default = template({
+  secondProp: 'b',
+});
