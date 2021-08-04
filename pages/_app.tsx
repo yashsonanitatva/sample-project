@@ -12,32 +12,34 @@ import "@lib/i18n/config";
 
 // Prevent font-flickering: https://github.com/styled-components/styled-components/issues/2900
 import "@theme/globalFonts.css";
+import NavBar from "@components/NavBar";
 
 function App({ Component, pageProps, router }: AppProps) {
-  const { i18n } = useTranslation(undefined, { useSuspense: false });
+	const { i18n } = useTranslation(undefined, { useSuspense: false });
 
-  const current = environment.themeName;
+	const current = environment.themeName;
 
-  return (
-    <>
-      <Head key="head-tag">
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, maximum-scale=5, width=device-width, shrink-to-fit=no, viewport-fit=cover"
-        />
-        <meta httpEquiv="content-language" content={i18n.language} />
-        <title>{"Sample Project"}</title>
-      </Head>
+	return (
+		<>
+			<Head key="head-tag">
+				<meta
+					name="viewport"
+					content="minimum-scale=1, initial-scale=1, maximum-scale=5, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+				/>
+				<meta httpEquiv="content-language" content={i18n.language} />
+				<title>{"Sample Project"}</title>
+			</Head>
 
-      <ThemeProvider
-        theme={{ currentTheme: current }}
-        key="styled-theme-provider"
-      >
-        <GlobalStyle key="styled-global-styles" />
-        <Component {...pageProps} key={router.route} />
-      </ThemeProvider>
-    </>
-  );
+			<ThemeProvider
+				theme={{ currentTheme: current }}
+				key="styled-theme-provider"
+			>
+				<NavBar />
+				<GlobalStyle key="styled-global-styles" />
+				<Component {...pageProps} key={router.route} />
+			</ThemeProvider>
+		</>
+	);
 }
 
 export default App;
