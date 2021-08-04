@@ -1,0 +1,16 @@
+import { render } from '@test/utils';
+
+import {{pascalCase name}} from './{{pascalCase name}}';
+
+test('{{pascalCase name}} should render', () => {
+  const { getByTestId, container } = render(<{{pascalCase name}} firstProp="a" secondProp="b">Hello</{{pascalCase name}}>);
+
+  const {{camelCase name}}Node = getByTestId('{{kebabCase name}}');
+
+  expect({{camelCase name}}Node).toBeVisible();
+  expect({{camelCase name}}Node.textContent).toBe('Hello');
+
+  expect(container).toMatchSnapshot();
+});
+
+// Add your tests

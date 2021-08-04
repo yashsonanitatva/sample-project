@@ -1,0 +1,24 @@
+import React, { FunctionComponent } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import useUid from '@lib/hooks/useUid';
+
+import './{{pascalCase name}}.i18n';
+
+import { {{pascalCase name}}Container } from './{{pascalCase name}}.styles';
+import { {{pascalCase name}}Props } from './{{pascalCase name}}.models';
+
+const {{pascalCase name}}: FunctionComponent<{{pascalCase name}}Props> = ({ firstProp, secondProp }) => {
+  const { t } = useTranslation('{{pascalCase name}}', { useSuspense: false });
+
+  const uid = useUid('', '{{kebabCase name}}'); // If there is only going to be one of your component on a given page ever, e.g. a tab bar, delete this line and assign a kebab-case string directly to `data-testid` below.
+
+  return (
+    <{{pascalCase name}}Container data-testid={uid}>
+      <h2>{t('title')}</h2>
+      <p>{firstProp} {secondProp}</p>
+    </{{pascalCase name}}Container>
+  );
+};
+
+export default {{pascalCase name}};

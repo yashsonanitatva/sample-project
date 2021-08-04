@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "language": "en_GB",
+  "dictionaries": ["en_US", "companies", "softwareTerms", "typescript", "node", "html", "css"],
+  "ignorePaths": [
+    "package.json",
+    "node_modules/**",
+    ".next/**",
+    "*.svg",
+    "*.lock",
+    "*.log",
+    "**/typings/**",
+    "**/mocks/data/*.json",
+    "**.test.tsx.snap",
+    ".gitignore",
+    "**.spec.ts"
+  ],
+  "words": []
+}
