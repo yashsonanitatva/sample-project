@@ -5,14 +5,12 @@ import Head from "next/Head";
 import RouterGlobal from "next/router";
 import { ThemeProvider } from "styled-components";
 import startCase from "lodash/startCase";
-
+import { useThemeToggleState } from "@components/ThemeToggle/ThemeToggle.hooks";
 import { GlobalStyle } from "@theme/globalStyle";
 import environment from "@lib/environment";
 
 import "@lib/i18n/config";
-
-// Prevent font-flickering: https://github.com/styled-components/styled-components/issues/2900
-import "@theme/globalFonts.css";
+import ThemeToggle from "@components/ThemeToggle";
 
 RouterGlobal.events.on("routeChangeComplete", (url: string) => {
   const name = new URL(`https://whatever.com${url}`).pathname
@@ -26,7 +24,7 @@ RouterGlobal.events.on("routeChangeComplete", (url: string) => {
 function App({ Component, pageProps, router }: AppProps) {
   const { i18n } = useTranslation(undefined, { useSuspense: false });
 
-  const current = environment.themeName;
+  const { toggleTheme, current } = useThemeToggleState(environment.themeName);
 
   return (
     <>
@@ -45,6 +43,7 @@ function App({ Component, pageProps, router }: AppProps) {
       >
         <GlobalStyle key="styled-global-styles" />
         <Component {...pageProps} key={router.route} />
+        <ThemeToggle toggleTheme={toggleTheme} />
       </ThemeProvider>
     </>
   );

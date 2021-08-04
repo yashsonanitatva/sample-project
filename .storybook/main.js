@@ -1,12 +1,16 @@
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
 module.exports = {
-	"stories": [
-		"../src/**/*.stories.mdx",
-		"../src/**/*.stories.@(js|jsx|ts|tsx)"
-	],
-	"addons": [
-		"@storybook/addon-links",
-		"@storybook/addon-essentials",
-		"@storybook/preset-create-react-app",
-		"@storybook/addon-actions/register",
-	]
-}
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-knobs",
+    "@storybook/addon-backgrounds",
+    "@storybook/addon-viewport",
+    "@storybook/addon-controls",
+  ],
+  webpackFinal: async (config) => {
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
+    return config;
+  },
+};

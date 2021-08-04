@@ -24,7 +24,7 @@ export const globalStyleTheme = createComponentTheme<GlobalStyleTheme>({
 /** Using css gives formatting */
 export const styles = css`
   * {
-    font-family: "Equals", sans-serif;
+    font-family: "Times New Roman", sans-serif;
   }
 
   /* Box sizing rules */
@@ -47,7 +47,7 @@ export const styles = css`
   dd {
     margin: 0;
     font-size: 1rem;
-    font-family: "Equals", sans-serif;
+    font-family: "Times New Roman", sans-serif;
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
