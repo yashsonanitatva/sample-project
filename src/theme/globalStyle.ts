@@ -61,14 +61,12 @@ export const styles = css`
   }
 
   html {
-    display: flex;
     min-height: ${tokens.sizes.full};
   }
 
   body,
   #__next,
   main {
-    display: flex;
     flex: 1;
     height: auto;
     min-height: auto;

@@ -2,12 +2,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { AppProps } from "next/app";
 import Head from "next/Head";
-import RouterGlobal from "next/router";
 import { ThemeProvider } from "styled-components";
 import startCase from "lodash/startCase";
 import { useThemeToggleState } from "@components/ThemeToggle/ThemeToggle.hooks";
 import { GlobalStyle } from "@theme/globalStyle";
+import NavBar from "@components/NavBar";
 import environment from "@lib/environment";
+import RouterGlobal from "next/router";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import "@lib/i18n/config";
 import ThemeToggle from "@components/ThemeToggle";
@@ -42,6 +44,7 @@ function App({ Component, pageProps, router }: AppProps) {
         key="styled-theme-provider"
       >
         <GlobalStyle key="styled-global-styles" />
+        <NavBar />
         <Component {...pageProps} key={router.route} />
         <ThemeToggle toggleTheme={toggleTheme} />
       </ThemeProvider>
