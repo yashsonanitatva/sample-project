@@ -37,4 +37,8 @@ export interface Environment {
    * Name of the theme used across the entire project.
    */
   themeName: ThemeName;
+  /**
+   * Api server
+   */
+  apiServer: string;
 }

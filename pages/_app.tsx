@@ -13,6 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "@lib/i18n/config";
 import ThemeToggle from "@components/ThemeToggle";
+import initInterceptors from "@lib/interceptors";
+import Layout from "@components/Layout";
 
 RouterGlobal.events.on("routeChangeComplete", (url: string) => {
   const name = new URL(`https://whatever.com${url}`).pathname
@@ -27,6 +29,8 @@ function App({ Component, pageProps, router }: AppProps) {
   const { i18n } = useTranslation(undefined, { useSuspense: false });
 
   const { toggleTheme, current } = useThemeToggleState(environment.themeName);
+
+  initInterceptors();
 
   return (
     <>
@@ -44,8 +48,9 @@ function App({ Component, pageProps, router }: AppProps) {
         key="styled-theme-provider"
       >
         <GlobalStyle key="styled-global-styles" />
-        <NavBar />
-        <Component {...pageProps} key={router.route} />
+        <Layout>
+          <Component {...pageProps} key={router.route} />
+        </Layout>
         <ThemeToggle toggleTheme={toggleTheme} />
       </ThemeProvider>
     </>
