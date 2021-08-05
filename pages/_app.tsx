@@ -15,7 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "@lib/i18n/config";
 import ThemeToggle from "@components/ThemeToggle";
-import initInterceptors from "@lib/interceptors";
+import initInterceptors from "@lib/axios/interceptors";
 import Layout from "@components/Layout";
 import { store, persistentStore } from "@state/store";
 

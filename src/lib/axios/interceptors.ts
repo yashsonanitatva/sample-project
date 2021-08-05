@@ -6,7 +6,8 @@ import {
   HTTP_STATUS_INTERNAL_SERVER,
   HTTP_STATUS_OK,
   HTTP_STATUS_NOT_FOUND,
-} from "./constant";
+} from "../constant";
+
 export type Method =
   | "get"
   | "GET"
@@ -53,6 +54,7 @@ export interface AxiosResponse<T = any> {
   headers: any;
   config: AxiosRequestConfig;
   message?: any;
+  success?: boolean;
 }
 
 const getErrorText = (status: Number) => {
@@ -93,6 +95,7 @@ const initInterceptors = () => {
         headers: response.headers,
         config: response.config,
         message: response.data?.message,
+        success: true,
       };
       return apiResponse;
     },
@@ -105,6 +108,7 @@ const initInterceptors = () => {
         headers: error.headers,
         config: error.config,
         message: error.data?.message,
+        success: false,
       };
       return apiError;
     }
