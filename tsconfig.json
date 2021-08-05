@@ -1,60 +1,63 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "checkJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "typeRoots": [
-      "src/typings",
-      "node_modules/@types"
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@theme/*": [
-        "src/theme/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@typings/*": [
-        "src/typings/*"
-      ],
-      "@lib/*": [
-        "src/lib/*"
-      ],
-      "@test/*": [
-        "__tests__/*"
-      ],
-    }
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.svg",
-    "src/typing/imask.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "ios",
-    "out",
-    ".next",
-  ]
+	"compilerOptions": {
+		"target": "es5",
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"allowJs": true,
+		"checkJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"typeRoots": [
+			"src/typings",
+			"node_modules/@types"
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": [
+				"src/components/*"
+			],
+			"@theme/*": [
+				"src/theme/*"
+			],
+			"@pages/*": [
+				"src/pages/*"
+			],
+			"@state/*": [
+				"src/state/*"
+			],
+			"@typings/*": [
+				"src/typings/*"
+			],
+			"@lib/*": [
+				"src/lib/*"
+			],
+			"@test/*": [
+				"__tests__/*"
+			]
+		}
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.svg",
+		"src/typing/imask.d.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"ios",
+		"out",
+		".next",
+	]
 }
