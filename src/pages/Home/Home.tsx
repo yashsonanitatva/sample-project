@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import { useTranslation } from "react-i18next";
 import Head from "next/Head";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 import "./Home.i18n";
 
@@ -16,6 +17,7 @@ import { Button } from "@components/Button";
 const Home: NextPage = () => {
 	const dispatch = useDispatch();
 	const userList = useSelector((state: IState) => state.user.list);
+	const route = useRouter();
 
 	const { t } = useTranslation("Home", { useSuspense: false });
 
@@ -35,6 +37,7 @@ const Home: NextPage = () => {
 				<Button
 					name="Add User"
 					variant="pill"
+					onClick={() => route.push('home/add')}
 				>
 					Add User
 				</Button>

@@ -82,7 +82,7 @@ export const HtmlInput = styled.input<HtmlInputProps>`
       caret-color: transparent;
     `}
 
-  width: calc(100vw - ${tokens.sizes[40]});
+  width: calc(98.5vw);
   height: ${tokens.sizes.full};
   padding: ${tokens.sizes[24]} ${tokens.sizes[12]} ${tokens.sizes[8]}
     ${tokens.sizes[12]};
