@@ -4,6 +4,7 @@ export type TestElementType =
   | 'input'
   | 'input-container'
   | 'button'
-  | 'navigation';
+  | 'navigation'
+  | 'table';
 
 export const createTestId = (type: TestElementType, name: string) => `${type}-${kebabCase(name)}`;
