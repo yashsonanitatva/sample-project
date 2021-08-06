@@ -7,6 +7,8 @@ import reducers from '@state/reducers';
 const persistConfig = {
 	key: 'sample-project',
 	storage,
+	whitelist: ['auth'],
+	blacklist: []
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers)
