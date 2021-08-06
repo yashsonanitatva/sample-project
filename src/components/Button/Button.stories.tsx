@@ -1,37 +1,34 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta } from "@storybook/react/types-6-0";
 
-import Button from './Button';
+import { templateForComponent } from "@lib/templateHelper";
+import { Button } from "./Button";
 
-export default {
-  title: 'Components/Button',
+const meta: Meta = {
+  title: "Components/Button",
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
+};
+
+export default meta;
+
+const template = templateForComponent(Button, {
+  layout: "padded",
+  design: {
+    type: "figma",
+    url:
+      "https://www.figma.com/file/SL6C1iH3IFIQmw1zzEJEdH/Geometry-Web?node-id=479%3A68",
   },
-} as ComponentMeta<typeof Button>;
+  sharedProps: {},
+});
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export const Primary = template({
+  label: "Primary",
+  name: "Story",
+});
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const Pill = template({
+  label: "Add people",
+  name: "Story",
+  variant: "pill",
+  disabled: false,
+  busy: false,
+});
