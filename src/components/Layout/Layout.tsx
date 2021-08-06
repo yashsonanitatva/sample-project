@@ -1,32 +1,30 @@
 import React, { FunctionComponent, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/router";
 
 import "./Layout.i18n";
 
-import {
-  LayoutContainer,
-  MainContainer,
-  SignedOutContainer,
-} from "./Layout.styles";
+import { LayoutContainer, MainContainer } from "./Layout.styles";
 import { LayoutProps } from "./Layout.models";
 import NavBar from "@components/NavBar";
+import Login from "@components/Login";
+import { useSelector } from "react-redux";
+import { RootState } from "@state/reducers";
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   const { t } = useTranslation("Layout", { useSuspense: false });
-  const router = useRouter();
-
+  const isLoggedIn = useSelector((state: RootState) => state.auth.loggedIn);
   return (
     <>
-      {/* {userInfo ? ( */}
       <LayoutContainer data-testid="layout">
-        <NavBar />
-        <MainContainer>{children}</MainContainer>
+        {isLoggedIn ? (
+          <>
+            <NavBar />
+            <MainContainer>{children}</MainContainer>{" "}
+          </>
+        ) : (
+          <Login />
+        )}
       </LayoutContainer>
-      {/* )
-       : (
-        <SignedOutContainer>{children}</SignedOutContainer>
-      )} */}
     </>
   );
 };

@@ -88,9 +88,9 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
     },
     link: {
       backgroundColor: "transparent",
-      label: palette.skyBlue[8],
+      label: palette.midnightBlue[0],
       hoverBg: "transparent",
-      hoverLabel: palette.skyBlue[8],
+      hoverLabel: palette.midnightBlue[1],
       border: "none",
       focus: palette.white[0],
       disabledBg: "transparent",
@@ -135,9 +135,9 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
     },
     link: {
       backgroundColor: "transparent",
-      label: palette.mango[0],
+      label: palette.grey[0],
       hoverBg: "transparent",
-      hoverLabel: palette.mango[0],
+      hoverLabel: palette.grey[1],
       border: "none",
       focus: palette.white[0],
       disabledBg: "transparent",
