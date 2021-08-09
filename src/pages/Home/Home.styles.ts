@@ -14,3 +14,13 @@ export const HeaderWrapper = styled.div`
 export const H2 = styled.h2`
 	font-size: 22px;
 `;
+
+export const EditWrapper = styled.div`
+	display: flex;
+	flex: 1;
+	justify-content: space-around;
+`;
+
+export const ButtonAction = styled.p`
+	cursor: pointer;
+`;

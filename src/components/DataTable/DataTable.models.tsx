@@ -7,6 +7,10 @@ interface IColumn {
 	 * Access key name 
 	 */
 	accessor: string;
+	/**
+	 * Render the content you want
+	 */
+	render?: (row: any) => JSX.Element;
 }
 
 export interface DataTableProps<T> {
@@ -17,5 +21,5 @@ export interface DataTableProps<T> {
 	/**
 	 * Column name
 	 **/
-	 columns: IColumn[];
+	columns: IColumn[];
 }

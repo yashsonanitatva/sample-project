@@ -24,4 +24,6 @@ yarn dev
 8. Command base Component & Page creation.
 9. i18 integration
 10. Path alias Ex. @pages/Home
-11. Must use Functional component
+11. Axios interceptor for request/response middleware
+12. Must use Functional component ( Don't use class component)
+13. Only component name should start from capital letter.

@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 import "./Home.i18n";
 
-import { Content, H2, HeaderWrapper } from "./Home.styles";
+import { Content, H2, HeaderWrapper, EditWrapper, ButtonAction } from "./Home.styles";
 import { getUserList } from "src/services/home.service";
 import { setUsers } from "@state/actions/user.action";
 import { IState } from "@state/store.model";
@@ -27,43 +27,66 @@ const Home: NextPage = () => {
     });
   }, []);
 
-  return (
-    <Content>
-      <Head>
-        <title>{t("title")}</title>
-      </Head>
-      <HeaderWrapper>
-        <H2>Users</H2>
-        <Button
-          name="Add User"
-          variant="pill"
-          onClick={() => route.push("home/add")}
-        >
-          Add User
-        </Button>
-      </HeaderWrapper>
-      <DataTable
-        columns={[
-          {
-            name: "Name",
-            accessor: "name",
-          },
-          {
-            name: "Username",
-            accessor: "name",
-          },
-          {
-            name: "Email",
-            accessor: "email",
-          },
-          {
-            name: "Phone",
-            accessor: "phone",
-          },
-        ]}
-        data={userList}
-      />
-    </Content>
-  );
+	const handleEdit = (_id) => {
+		
+	}
+
+	const handleDelete = (_id: any) => {
+		const users = userList.filter((user: any) => {
+			return user.id !== _id;
+		});
+		dispatch(setUsers(users));
+	}
+
+	return (
+		<Content>
+			<Head>
+				<title>{t("title")}</title>
+			</Head>
+			<HeaderWrapper>
+				<H2>Users</H2>
+				<Button
+					name="Add User"
+					variant="pill"
+					onClick={() => route.push('home/add')}
+				>
+					Add User
+				</Button>
+			</HeaderWrapper>
+			<DataTable
+				columns={[
+					{
+						name: 'Name',
+						accessor: 'name'
+					},
+					{
+						name: 'Username',
+						accessor: 'name'
+					},
+					{
+						name: 'Email',
+						accessor: 'email'
+					},
+					{
+						name: 'Phone',
+						accessor: 'phone'
+					},
+					{
+						name: '',
+						accessor: 'edit',
+						// eslint-disable-next-line react/display-name
+						render: (row: any) => (
+							<EditWrapper>
+								<ButtonAction onClick={() => handleEdit(row)}>Edit</ButtonAction>
+								<ButtonAction onClick={() => handleDelete(row.id)}>Del</ButtonAction>
+							</EditWrapper>
+						)
+					},
+				]}
+				data={userList}
+			/>
+		</Content>
+	);
 };
+
 export default Home;

@@ -8,7 +8,7 @@ const jestConfig = {
 
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: [`node_modules`, `\\.next`, 'cypress', '__tests__'],
+  testPathIgnorePatterns: [`node_modules`, `\\.next`, '__tests__'],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
     '\\.(css)$': 'identity-obj-proxy',

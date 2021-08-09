@@ -33,7 +33,7 @@ function DataTable<T extends []>({
 								const keys = column.accessor;
 								return (
 									<td key={column.accessor}>
-										{item[keys]}
+										{column.render ? column.render(item) : item[keys]}
 									</td>
 								)
 							})}
