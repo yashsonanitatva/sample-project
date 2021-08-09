@@ -4,6 +4,7 @@ import { ButtonProps, ButtonVariants } from "./Button.models";
 import { buttonTheme } from "./Button.theme";
 import { buttonTokens } from "./Button.tokens";
 import { mq } from "@theme/mediaQueries";
+import { buttonReset } from "@theme/resets";
 
 export const ButtonContainer = styled.div<{
   $variant: ButtonVariants;
@@ -26,6 +27,7 @@ export const ButtonContainer = styled.div<{
 `;
 
 export const StyledButton = styled.button<ButtonProps>`
+  ${buttonReset}
   transition-property: color, background-color, border-radius;
   transition-duration: ${tokens.transitionDurations.base};
   transition-timing-function: ease;

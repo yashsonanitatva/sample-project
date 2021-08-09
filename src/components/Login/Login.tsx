@@ -26,28 +26,34 @@ const Login: FunctionComponent<LoginProps> = ({ userName, password }) => {
         }}
         validate={(values) => loginValidate(values, t)}
       >
-        {({ handleSubmit, setFieldValue }) => (
+        {({ handleSubmit }) => (
           <Form onSubmit={handleSubmit}>
             <Field name="userName">
-              {({ field }: FieldProps) => (
+              {({ field, meta }: FieldProps) => (
                 <TextInput
                   {...field}
                   label={t("userName")}
                   autoCapitalize="off"
                   type="text"
                   fullWidth
+                  error={Boolean(meta.error)}
+                  errorMessage={meta.error}
+                  autoComplete="off"
                 />
               )}
             </Field>
             <Box marginBottom={20} />
             <Field name="password">
-              {({ field }: FieldProps) => (
+              {({ field, meta }: FieldProps) => (
                 <TextInput
                   {...field}
                   type="password"
                   label={t("password")}
                   autoCapitalize="off"
                   fullWidth
+                  error={Boolean(meta.error)}
+                  errorMessage={meta.error}
+                  autoComplete="off"
                 />
               )}
             </Field>

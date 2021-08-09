@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 
 import { tokens } from "@theme/tokens";
-// import { mq } from "@theme/mediaQueries";
 import { HtmlInputProps, TextLabelProps } from "./TextInput.models";
 import { textInputTheme } from "./TextInput.theme";
 import { textInputTokens } from "./TextInput.tokens";
 import { mq } from "@theme/mediaQueries";
+import { inputReset } from "@theme/resets";
 
 export const TextInputContainer = styled.div<{ $fullWidth?: boolean }>`
   width: fit-content;
@@ -76,6 +76,8 @@ export const AccessoryContainer = styled.div`
 `;
 
 export const HtmlInput = styled.input<HtmlInputProps>`
+  ${inputReset};
+
   ${(p) =>
     p.readOnly &&
     css`

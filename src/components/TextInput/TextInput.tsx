@@ -15,6 +15,7 @@ import {
   InputStyle,
   TextInputContainer,
 } from "./TextInput.styles";
+import InputContainer from "@components/InputContainer";
 
 const TextInput: FunctionComponent<TextInputProps> = (props) => {
   const {
@@ -53,42 +54,42 @@ const TextInput: FunctionComponent<TextInputProps> = (props) => {
 
   return (
     <TextInputContainer $fullWidth={fullWidth}>
-      {/* <InputContainer focused={inputFocused} disabled={disabled} error={error}> */}
-      <InputStyle>
-        {label && (
-          <InputLabel
-            htmlFor={uid}
-            data-testid={`${uid}-label`}
-            active={inputFocused || used}
+      <InputContainer focused={inputFocused} disabled={disabled} error={error}>
+        <InputStyle>
+          {label && (
+            <InputLabel
+              htmlFor={uid}
+              data-testid={`${uid}-label`}
+              active={inputFocused || used}
+              disabled={disabled}
+              error={error}
+            >
+              {error ? errorMessage : label}
+            </InputLabel>
+          )}
+          <HtmlInput
+            name={name}
+            data-testid={uid}
+            id={uid}
+            value={value}
+            defaultValue={defaultValue}
+            fullWidth={fullWidth}
+            onFocus={(event) => {
+              setInputFocused(true);
+              onFocus?.(event);
+            }}
+            onBlur={(event) => {
+              setInputFocused(false);
+              onBlur?.(event);
+            }}
+            onChange={onChangeWrapper}
             disabled={disabled}
             error={error}
-          >
-            {error ? errorMessage : label}
-          </InputLabel>
-        )}
-        <HtmlInput
-          name={name}
-          data-testid={uid}
-          id={uid}
-          value={value}
-          defaultValue={defaultValue}
-          fullWidth={fullWidth}
-          onFocus={(event) => {
-            setInputFocused(true);
-            onFocus?.(event);
-          }}
-          onBlur={(event) => {
-            setInputFocused(false);
-            onBlur?.(event);
-          }}
-          onChange={onChangeWrapper}
-          disabled={disabled}
-          error={error}
-          readOnly={readOnly}
-          {...rest}
-        />
-      </InputStyle>
-      {/* </InputContainer> */}
+            readOnly={readOnly}
+            {...rest}
+          />
+        </InputStyle>
+      </InputContainer>
       {infoLabel && (
         <InfoLabel data-testid={`${uid}-info-label`}>{infoLabel}</InfoLabel>
       )}

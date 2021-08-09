@@ -9,7 +9,8 @@ export const loginValidate = (values: LoginProps, t: TFunction) => {
 
   if (!userName) {
     errors.userName = t("errors.userName");
-  } else if (!password) {
+  }
+  if (!password) {
     errors.password = t("errors.password");
   }
 
