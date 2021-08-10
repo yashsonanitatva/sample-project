@@ -19,6 +19,7 @@ import initInterceptors from "@lib/axios/interceptors";
 import Layout from "@components/Layout";
 import { store, persistentStore } from "@state/store";
 
+// use for route analytics
 RouterGlobal.events.on("routeChangeComplete", (url: string) => {
   const name = new URL(`https://whatever.com${url}`).pathname
     .split("/")

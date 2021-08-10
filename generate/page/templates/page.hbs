@@ -1,16 +1,24 @@
-import React from 'react'; import { NextPage } from 'next'; import {
-useTranslation } from 'react-i18next'; import Head from 'next/Head'; import './{{pascalCase
-  name
-}}.i18n'; import { Content } from './{{pascalCase name}}.styles'; const
-{{pascalCase name}}: NextPage = () => { const { t } = useTranslation('{{pascalCase
-  name
-}}', { useSuspense: false }); return (
-<Content>
-  <Head>
-    <title>{t('title')}</title>
-    <meta>{t('description')}</meta>
-  </Head>
-  <h1>{t('welcome')}</h1>
-</Content>
-); }; export default
-{{pascalCase name}};
+import React from 'react'; 
+import { NextPage } from 'next'; 
+import {useTranslation } from 'react-i18next';
+import Head from 'next/Head'; 
+
+import './{{pascalCase  name}}.i18n'; 
+
+import { Content } from './{{pascalCase name}}.styles'; 
+
+const{{pascalCase name}}: NextPage = () => { 
+	const { t } = useTranslation('{{pascalCase  name}}', { useSuspense: false }); 
+	
+	return (
+		<Content>
+		<Head>
+			<title>{t('title')}</title>
+			<meta>{t('description')}</meta>
+		</Head>
+		<h1>{t('welcome')}</h1>
+		</Content>
+	); 
+}; 
+
+export default {{pascalCase name}};
