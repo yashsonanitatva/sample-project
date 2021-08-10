@@ -3,12 +3,24 @@ import React, { FunctionComponent } from "react";
 import TextInput from "@components/TextInput";
 import { Button } from "@components/Button";
 import { FormContainer, MainWrapper } from "./HomeForm.styles";
-import { Field, FieldProps, Formik } from "formik";
+import { Field, FieldProps, Form, Formik } from "formik";
 import handleValidate from "./HomeForm.validate";
 import { Box } from "@components/Login/Login.styles";
+import { useDispatch, useSelector } from "react-redux";
+import { setUsers } from "@state/actions/user.action";
+import { useRouter } from "next/router";
+import { IState } from "@state/store.model";
 
-const HomeForm: FunctionComponent = (props: any) => {
-  const handleSubmit = (values: any) => {};
+const HomeForm: FunctionComponent = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const userList = useSelector((state: IState) => state.user.list);
+
+  const handleSubmit = (values: any) => {
+    console.log("in---", [...userList, values]);
+    dispatch(setUsers([...userList, values]));
+    router.push("/");
+  };
 
   return (
     <MainWrapper>
@@ -17,45 +29,41 @@ const HomeForm: FunctionComponent = (props: any) => {
         <Box marginBottom={20} />
         <Formik
           initialValues={{
-            firstName: "",
-            lastName: "",
+            name: "",
+            userName: "",
             email: "",
             phone: "",
           }}
-          onSubmit={handleSubmit}
+          onSubmit={(values) => {
+            handleSubmit(values);
+          }}
           validate={handleValidate}
         >
-          {({ values, setFieldValue, handleSubmit, errors, touched }) => (
-            <>
-              <Field name="firstName">
+          {({ handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <Field name="name">
                 {({ field, meta }: FieldProps) => (
                   <TextInput
                     {...field}
-                    name="firstName"
-                    label="First Name"
+                    name="name"
+                    label="Name"
                     type="text"
-                    onChange={(event) => {
-                      setFieldValue("firstName", event.target.value);
-                    }}
                     fullWidth
-                    error={Boolean(meta.error)}
+                    error={meta.touched && Boolean(meta.error)}
                     errorMessage={meta.error}
                     autoComplete="off"
                   />
                 )}
               </Field>
               <Box marginBottom={20} />
-              <Field name="lastName">
+              <Field name="userName">
                 {({ field, meta }: FieldProps) => (
                   <TextInput
                     {...field}
-                    name="lastName"
-                    label="Last Name"
-                    onChange={(event) => {
-                      setFieldValue("lastName", event.target.value);
-                    }}
+                    name="userName"
+                    label="User Name"
                     fullWidth
-                    error={Boolean(meta.error)}
+                    error={meta.touched && Boolean(meta.error)}
                     errorMessage={meta.error}
                     autoComplete="off"
                   />
@@ -68,11 +76,8 @@ const HomeForm: FunctionComponent = (props: any) => {
                     {...field}
                     name="email"
                     label="Email"
-                    onChange={(event) => {
-                      setFieldValue("email", event.target.value);
-                    }}
                     fullWidth
-                    error={Boolean(meta.error)}
+                    error={meta.touched && Boolean(meta.error)}
                     errorMessage={meta.error}
                     autoComplete="off"
                   />
@@ -85,11 +90,8 @@ const HomeForm: FunctionComponent = (props: any) => {
                     {...field}
                     name="phone"
                     label="Phone"
-                    onChange={(event) => {
-                      setFieldValue("phone", event.target.value);
-                    }}
                     fullWidth
-                    error={Boolean(meta.error)}
+                    error={meta.touched && Boolean(meta.error)}
                     errorMessage={meta.error}
                     autoComplete="off"
                   />
@@ -100,11 +102,10 @@ const HomeForm: FunctionComponent = (props: any) => {
                 name="add user"
                 variant="pill"
                 type="submit"
-                onClick={() => handleSubmit()}
                 fullWidth
                 label="Add User"
               />
-            </>
+            </Form>
           )}
         </Formik>
       </FormContainer>

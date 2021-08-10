@@ -1,6 +1,6 @@
 export interface IHomeForm {
-	firstName: string;
-	lastName: string;
-	email: string;
-	phone: string;
+  name: string;
+  userName: string;
+  email: string;
+  phone: string;
 }

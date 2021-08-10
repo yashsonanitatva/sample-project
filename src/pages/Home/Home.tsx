@@ -22,9 +22,11 @@ const Home: NextPage = () => {
   const { t } = useTranslation("Home", { useSuspense: false });
 
   useEffect(() => {
-    getUserList().then((res) => {
-      dispatch(setUsers(res.data));
-    });
+    if (userList.length === 0) {
+      getUserList().then((res) => {
+        dispatch(setUsers(res.data));
+      });
+    }
   }, [dispatch]);
 
   return (
