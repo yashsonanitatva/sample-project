@@ -7,7 +7,13 @@ import { useRouter } from "next/router";
 
 import "./Home.i18n";
 
-import { Content, H2, HeaderWrapper } from "./Home.styles";
+import {
+  ButtonAction,
+  Content,
+  EditWrapper,
+  H2,
+  HeaderWrapper,
+} from "./Home.styles";
 import { getUserList } from "src/services/home.service";
 import { setUsers } from "@state/actions/user.action";
 import { IState } from "@state/store.model";
@@ -17,7 +23,7 @@ import { Button } from "@components/Button";
 const Home: NextPage = () => {
   const dispatch = useDispatch();
   const userList = useSelector((state: IState) => state.user.list);
-  const route = useRouter();
+  const router = useRouter();
 
   const { t } = useTranslation("Home", { useSuspense: false });
 
@@ -29,6 +35,17 @@ const Home: NextPage = () => {
     }
   }, [dispatch]);
 
+  const handleEdit = (row: any) => {
+    router.push({ pathname: "home/add", query: { data: JSON.stringify(row) } });
+  };
+
+  const handleDelete = (_id: any) => {
+    const users = userList.filter((user: any) => {
+      return user.id !== _id;
+    });
+    dispatch(setUsers(users));
+  };
+
   return (
     <Content>
       <Head>
@@ -39,7 +56,7 @@ const Home: NextPage = () => {
         <Button
           name="Add User"
           variant="pill"
-          onClick={() => route.push("home/add")}
+          onClick={() => router.push("home/add")}
         >
           Add User
         </Button>
@@ -61,6 +78,21 @@ const Home: NextPage = () => {
           {
             name: "Phone",
             accessor: "phone",
+          },
+          {
+            name: "",
+            accessor: "edit",
+            // eslint-disable-next-line react/display-name
+            render: (row: any) => (
+              <EditWrapper>
+                <ButtonAction onClick={() => handleEdit(row)}>
+                  Edit
+                </ButtonAction>
+                <ButtonAction onClick={() => handleDelete(row.id)}>
+                  Delete
+                </ButtonAction>
+              </EditWrapper>
+            ),
           },
         ]}
         data={userList}

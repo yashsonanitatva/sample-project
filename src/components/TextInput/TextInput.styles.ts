@@ -96,7 +96,7 @@ export const HtmlInput = styled.input<HtmlInputProps>`
         ? css`
             width: ${tokens.sizes.full};
           `
-        : `calc(${tokens.sizes[444]}`};
+        : tokens.sizes[444]};
   }
 
   &:disabled {

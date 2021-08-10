@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 
 import TextInput from "@components/TextInput";
 import { Button } from "@components/Button";
@@ -15,10 +15,26 @@ const HomeForm: FunctionComponent = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const userList = useSelector((state: IState) => state.user.list);
+  const data: any = new URLSearchParams(window.location.search).get("data");
+  const user = JSON.parse(data);
 
   const handleSubmit = (values: any) => {
-    console.log("in---", [...userList, values]);
-    dispatch(setUsers([...userList, values]));
+    if (user?.id) {
+      const newUsers = userList.map((item: any, index: number) =>
+        item.id === user.id
+          ? {
+              ...user,
+              name: values.name,
+              username: values.userName,
+              email: values.email,
+              phone: values.phone,
+            }
+          : item
+      );
+      dispatch(setUsers(newUsers));
+    } else {
+      dispatch(setUsers([...userList, values]));
+    }
     router.push("/");
   };
 
@@ -29,10 +45,10 @@ const HomeForm: FunctionComponent = () => {
         <Box marginBottom={20} />
         <Formik
           initialValues={{
-            name: "",
-            userName: "",
-            email: "",
-            phone: "",
+            name: user?.name ?? "",
+            userName: user?.username ?? "",
+            email: user?.email ?? "",
+            phone: user?.phone ?? "",
           }}
           onSubmit={(values) => {
             handleSubmit(values);
@@ -99,11 +115,20 @@ const HomeForm: FunctionComponent = () => {
               </Field>
               <Box marginBottom={20} />
               <Button
-                name="add user"
-                variant="pill"
+                name="addUser"
+                variant="contained"
                 type="submit"
                 fullWidth
-                label="Add User"
+                label={user ? "Update User" : "Add User"}
+              />
+              <Box marginBottom={20} />
+              <Button
+                name="cancel"
+                variant="outlined"
+                type="button"
+                fullWidth
+                label="Cancel"
+                onClick={() => router.push("/")}
               />
             </Form>
           )}

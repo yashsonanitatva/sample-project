@@ -28,7 +28,11 @@ function DataTable<T>({ data, columns }: DataTableProps<T>) {
             <tr key={index}>
               {columns.map((column) => {
                 const keys = column.accessor;
-                return <td key={column.accessor}>{item[keys]}</td>;
+                return (
+                  <td key={column.accessor}>
+                    {column.render ? column.render(item) : item[keys]}
+                  </td>
+                );
               })}
             </tr>
           ))}

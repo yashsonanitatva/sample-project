@@ -5,10 +5,10 @@ const handleValidate = (values: IHomeForm) => {
   const error: FormikErrors<IHomeForm> = {};
 
   if (!values.name) {
-    error.name = "Please enter first name";
+    error.name = "Please enter name";
   }
   if (!values.userName) {
-    error.userName = "Please enter last name";
+    error.userName = "Please enter user name";
   }
   if (!values.email) {
     error.email = "Please enter email";
