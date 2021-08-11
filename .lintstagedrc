@@ -1,0 +1,5 @@
+{
+  "*.{js,jsx,ts,tsx}": "xo --fix",
+  "*": "cspell -- --no-summary",
+  "*.sh": "npx shellcheck -x"
+}
