@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import {ButtonHTMLAttributes, FunctionComponent} from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -38,4 +38,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   roundedCorners?: boolean;
 }
 
-export type ButtonVariants = 'contained' | 'outlined' | 'squared' | 'icon' | 'pill' | 'link';
+export type ButtonVariants =
+  | 'contained'
+  | 'outlined'
+  | 'squared'
+  | 'icon'
+  | 'pill'
+  | 'link';

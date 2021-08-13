@@ -1,8 +1,8 @@
 const argv = require('yargs').argv;
 
-const log = require('./generate/log');
-const generatePage = require('./generate/page/generate');
-const generateComponent = require('./generate/component/generate');
+const log = require('./generate/log.js');
+const generatePage = require('./generate/page/generate.js');
+const generateComponent = require('./generate/component/generate.js');
 
 log.logo();
 

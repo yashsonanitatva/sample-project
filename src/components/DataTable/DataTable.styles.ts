@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { dataTableTheme } from './DataTable.theme';
+import {dataTableTheme} from './DataTable.theme';
 
 export const DataTableContainer = styled.div`
-  background-color: ${ dataTableTheme.backgroundColor};
+  background-color: ${dataTableTheme.backgroundColor};
 `;

@@ -1,17 +1,16 @@
-import React, { FunctionComponent, useContext } from "react";
-import { useTranslation } from "react-i18next";
-import { Table } from "react-bootstrap";
-import { ThemeContext } from "styled-components";
+import React, {useContext} from 'react';
+import {Table} from 'react-bootstrap';
+import {ThemeContext} from 'styled-components';
 
-import useUid from "@lib/hooks/useUid";
+import useUid from '@lib/hooks/useUid';
 
-import { DataTableContainer } from "./DataTable.styles";
-import { DataTableProps } from "./DataTable.models";
+import {DataTableContainer} from './DataTable.styles';
+import {DataTableProps} from './DataTable.models';
 
-function DataTable<T>({ data, columns }: DataTableProps<T>) {
+function DataTable<T>({data, columns}: DataTableProps<T>) {
   const themeContext = useContext(ThemeContext);
 
-  const uid = useUid("table", "data-table");
+  const uid = useUid('table', 'data-table');
 
   return (
     <DataTableContainer data-testid={uid}>

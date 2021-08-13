@@ -1,17 +1,12 @@
-import React, { FunctionComponent, useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import React, {FunctionComponent} from 'react';
+import {LayoutContainer, MainContainer} from './Layout.styles';
+import {LayoutProps} from './Layout.models';
+import NavBar from '@components/NavBar';
+import Login from '@components/Login';
+import {useSelector} from 'react-redux';
+import {RootState} from '@state/reducers';
 
-import "./Layout.i18n";
-
-import { LayoutContainer, MainContainer } from "./Layout.styles";
-import { LayoutProps } from "./Layout.models";
-import NavBar from "@components/NavBar";
-import Login from "@components/Login";
-import { useSelector } from "react-redux";
-import { RootState } from "@state/reducers";
-
-const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
-  const { t } = useTranslation("Layout", { useSuspense: false });
+const Layout: FunctionComponent<LayoutProps> = ({children}) => {
   const isLoggedIn = useSelector((state: RootState) => state.auth.loggedIn);
   return (
     <>
@@ -19,7 +14,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         {isLoggedIn ? (
           <>
             <NavBar />
-            <MainContainer>{children}</MainContainer>{" "}
+            <MainContainer>{children}</MainContainer>{' '}
           </>
         ) : (
           <Login />

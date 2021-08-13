@@ -1,5 +1,5 @@
-import { createComponentTheme } from "@theme/createComponentTheme";
-import { tokens } from "@theme/tokens";
+import {createComponentTheme} from '@theme/createComponentTheme';
+import {tokens} from '@theme/tokens';
 
 const palette = tokens.palette;
 
@@ -21,7 +21,7 @@ const toggleTheme = createComponentTheme<ToggleTheme>({
     outlineColor: palette.mango[0],
     disabledThumbBackgroundColor: palette.grey[7],
     disabledBackgroundColor: palette.grey[4],
-    shadowColor: `${tokens.palette.black[0]}${tokens.alpha[30]}`,
+    shadowColor: `${tokens.palette.black[0]}${tokens.alpha[30]}`
   },
   light: {
     inactiveBackgroundColor: palette.grey[4],
@@ -30,8 +30,8 @@ const toggleTheme = createComponentTheme<ToggleTheme>({
     outlineColor: palette.mango[0],
     disabledThumbBackgroundColor: palette.grey[0],
     disabledBackgroundColor: palette.grey[2],
-    shadowColor: `${tokens.palette.black[0]}${tokens.alpha[30]}`,
-  },
+    shadowColor: `${tokens.palette.black[0]}${tokens.alpha[30]}`
+  }
 });
 
-export { toggleTheme };
+export {toggleTheme};

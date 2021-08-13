@@ -3,19 +3,19 @@ import React, {
   FunctionComponent,
   useCallback,
   useEffect,
-  useState,
-} from "react";
+  useState
+} from 'react';
 
-import useUid from "@lib/hooks/useUid";
-import { TextInputProps } from "./TextInput.models";
+import useUid from '@lib/hooks/useUid';
+import {TextInputProps} from './TextInput.models';
 import {
   HtmlInput,
   InfoLabel,
   InputLabel,
   InputStyle,
-  TextInputContainer,
-} from "./TextInput.styles";
-import InputContainer from "@components/InputContainer";
+  TextInputContainer
+} from './TextInput.styles';
+import InputContainer from '@components/InputContainer';
 
 const TextInput: FunctionComponent<TextInputProps> = (props) => {
   const {
@@ -50,7 +50,7 @@ const TextInput: FunctionComponent<TextInputProps> = (props) => {
     setUsed(value ? value.length > 0 : false);
   }, [value]);
 
-  const uid = useUid("input", name);
+  const uid = useUid('input', name);
 
   return (
     <TextInputContainer $fullWidth={fullWidth}>

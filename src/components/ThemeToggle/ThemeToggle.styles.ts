@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { tokens } from "@theme/tokens";
-import { themeToggleTheme } from "./ThemeToggle.theme";
+import {tokens} from '@theme/tokens';
+import {themeToggleTheme} from './ThemeToggle.theme';
 
 export const ThemeToggleButton = styled.button`
   border-radius: ${tokens.sizes.half};

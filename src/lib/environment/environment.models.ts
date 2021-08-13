@@ -1,23 +1,23 @@
-import { ThemeName } from "@theme/theme";
+import {ThemeName} from '@theme/theme';
 
 export enum EnvironmentType {
   /**
    * Deployed publicly.
    */
-  Production = "production",
+  Production = 'production',
   /**
    * Deployed for use within company employees.
    */
-  Development = "develop",
+  Development = 'develop',
   /**
    * Running on the local machine of a developer.
    */
-  Local = "local",
+  Local = 'local'
 }
 
 export enum VercelEnvironment {
-  Production = "production",
-  Development = "development",
+  Production = 'production',
+  Development = 'development'
 }
 
 export interface Environment {

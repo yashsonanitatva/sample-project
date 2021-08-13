@@ -1,13 +1,13 @@
-import ACTION from "@state/actions/action.types";
+import ACTION from '@state/actions/action.types';
 
 const initialize = {
-  list: [],
+  list: []
 };
 
-const UserReducer = (state = initialize, action: any) => {
+const UserReducer = (state = initialize, action: any = {}) => {
   switch (action.type) {
     case ACTION.SET_USER_LIST:
-      return { ...state, list: action.payLoad };
+      return {...state, list: action.payLoad};
     default:
       return state;
   }

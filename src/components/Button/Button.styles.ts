@@ -1,10 +1,10 @@
-import styled, { css, keyframes } from "styled-components";
-import { tokens } from "@theme/tokens";
-import { ButtonProps, ButtonVariants } from "./Button.models";
-import { buttonTheme } from "./Button.theme";
-import { buttonTokens } from "./Button.tokens";
-import { mq } from "@theme/mediaQueries";
-import { buttonReset } from "@theme/resets";
+import styled, {css, keyframes} from 'styled-components';
+import {tokens} from '@theme/tokens';
+import {ButtonProps, ButtonVariants} from './Button.models';
+import {buttonTheme} from './Button.theme';
+import {buttonTokens} from './Button.tokens';
+import {mq} from '@theme/mediaQueries';
+import {buttonReset} from '@theme/resets';
 
 export const ButtonContainer = styled.div<{
   $variant: ButtonVariants;
@@ -15,7 +15,7 @@ export const ButtonContainer = styled.div<{
   align-items: center;
 
   ${(p) =>
-    p.$variant === "icon" &&
+    p.$variant === 'icon' &&
     css`
       flex-direction: column;
     `}
@@ -40,41 +40,41 @@ export const StyledButton = styled.button<ButtonProps>`
   width: ${(p) =>
     p.fullWidth
       ? tokens.sizes.full
-      : p.variant === "squared"
+      : p.variant === 'squared'
       ? tokens.sizes[56]
-      : p.variant === "link"
-      ? "auto"
-      : p.variant === "pill"
+      : p.variant === 'link'
+      ? 'auto'
+      : p.variant === 'pill'
       ? tokens.sizes.full
       : css`calc(100vw - ${tokens.sizes[40]})`};
   height: ${(p) =>
-    p.variant === "pill"
+    p.variant === 'pill'
       ? tokens.sizes[48]
-      : p.variant === "link"
-      ? "auto"
+      : p.variant === 'link'
+      ? 'auto'
       : tokens.sizes[56]};
 
   background-color: ${(p) =>
     p.disabled || p.busy
-      ? buttonTheme[p.variant ?? "squared"].disabledBg
-      : buttonTheme[p.variant ?? "squared"].backgroundColor};
+      ? buttonTheme[p.variant ?? 'squared'].disabledBg
+      : buttonTheme[p.variant ?? 'squared'].backgroundColor};
   color: ${(p) =>
     p.disabled || p.busy
-      ? buttonTheme[p.variant ?? "squared"].disabledLabel
-      : buttonTheme[p.variant ?? "squared"].label};
-  padding: ${(p) => (p.variant === "pill" ? `0 ${tokens.sizes[10]}` : "0")};
+      ? buttonTheme[p.variant ?? 'squared'].disabledLabel
+      : buttonTheme[p.variant ?? 'squared'].label};
+  padding: ${(p) => (p.variant === 'pill' ? `0 ${tokens.sizes[10]}` : '0')};
 
   ${(p) =>
-    p.variant === "outlined"
+    p.variant === 'outlined'
       ? css`
           border: ${tokens.sizes[2]} solid ${buttonTheme.outlined.border};
         `
-      : p.variant === "pill"
+      : p.variant === 'pill'
       ? css`
           border: ${tokens.sizes[2]} solid
             ${p.disabled || p.busy
-              ? buttonTheme[p.variant ?? "squared"].disabledBorder
-              : buttonTheme[p.variant ?? "squared"].border};
+              ? buttonTheme[p.variant ?? 'squared'].disabledBorder
+              : buttonTheme[p.variant ?? 'squared'].border};
           border-radius: ${tokens.sizes[25]};
           font-size: ${tokens.sizes[14]};
           margin: ${tokens.sizes[25]} ${tokens.sizes[0]} ${tokens.sizes[25]}
@@ -84,7 +84,7 @@ export const StyledButton = styled.button<ButtonProps>`
             height: ${tokens.sizes[24]};
 
             path {
-              fill: ${buttonTheme[p.variant ?? "squared"].icon};
+              fill: ${buttonTheme[p.variant ?? 'squared'].icon};
             }
           }
         `
@@ -96,20 +96,20 @@ export const StyledButton = styled.button<ButtonProps>`
     width: ${(p) =>
       p.fullWidth
         ? tokens.sizes.full
-        : p.variant === "squared"
+        : p.variant === 'squared'
         ? tokens.sizes[56]
-        : p.variant === "pill"
-        ? "auto"
-        : p.variant === "link"
-        ? "auto"
+        : p.variant === 'pill'
+        ? 'auto'
+        : p.variant === 'link'
+        ? 'auto'
         : buttonTokens.width};
     height: ${(p) =>
-      p.variant === "pill"
+      p.variant === 'pill'
         ? tokens.sizes[48]
-        : p.variant === "link"
-        ? "auto"
+        : p.variant === 'link'
+        ? 'auto'
         : tokens.sizes[56]};
-    min-width: ${(p) => (p.variant === "pill" ? tokens.sizes[148] : "auto")};
+    min-width: ${(p) => (p.variant === 'pill' ? tokens.sizes[148] : 'auto')};
   }
 
   // Only apply hover styles in scenarios that support it i.e. a Desktop browser
@@ -118,21 +118,21 @@ export const StyledButton = styled.button<ButtonProps>`
     &:hover {
       background-color: ${(p) =>
         p.disabled || p.busy
-          ? buttonTheme[p.variant ?? "squared"].disabledBg
-          : buttonTheme[p.variant ?? "squared"].hoverBg};
+          ? buttonTheme[p.variant ?? 'squared'].disabledBg
+          : buttonTheme[p.variant ?? 'squared'].hoverBg};
       color: ${(p) =>
         p.disabled || p.busy
-          ? buttonTheme[p.variant ?? "squared"].disabledLabel
-          : buttonTheme[p.variant ?? "squared"].hoverLabel};
+          ? buttonTheme[p.variant ?? 'squared'].disabledLabel
+          : buttonTheme[p.variant ?? 'squared'].hoverLabel};
       border-color: ${(p) =>
         p.disabled || p.busy
-          ? buttonTheme[p.variant ?? "squared"].disabledBorder
-          : p.variant === "pill"
-          ? buttonTheme[p.variant ?? "squared"].hoverBg
-          : "none"};
+          ? buttonTheme[p.variant ?? 'squared'].disabledBorder
+          : p.variant === 'pill'
+          ? buttonTheme[p.variant ?? 'squared'].hoverBg
+          : 'none'};
       svg {
         path {
-          fill: ${(p) => buttonTheme[p.variant ?? "squared"].iconHoverBg};
+          fill: ${(p) => buttonTheme[p.variant ?? 'squared'].iconHoverBg};
         }
       }
     }
@@ -140,18 +140,18 @@ export const StyledButton = styled.button<ButtonProps>`
 
   &:focus {
     box-shadow: 0 0 0
-      ${(p) => (p.variant === "pill" ? tokens.sizes[1] : "inset")}
-      ${(p) => buttonTheme[p.variant ?? "squared"].focus};
+      ${(p) => (p.variant === 'pill' ? tokens.sizes[1] : 'inset')}
+      ${(p) => buttonTheme[p.variant ?? 'squared'].focus};
     outline: none;
     ${(p) =>
-      p.variant === "pill" &&
+      p.variant === 'pill' &&
       css`
         border: ${tokens.sizes[4]} solid ${tokens.palette.white};
       `}
   }
 
   ${(p) =>
-    p.variant === "icon" &&
+    p.variant === 'icon' &&
     css`
       width: ${tokens.sizes[60]};
       height: ${tokens.sizes[60]};
@@ -166,7 +166,7 @@ export const StyledButton = styled.button<ButtonProps>`
         height: ${tokens.sizes[30]};
 
         path {
-          fill: ${buttonTheme[p.variant ?? "squared"].icon};
+          fill: ${buttonTheme[p.variant ?? 'squared'].icon};
         }
       }
 
@@ -176,12 +176,12 @@ export const StyledButton = styled.button<ButtonProps>`
       }
 
       ${mq(768)} {
-        width: ${p.size === "default" ? tokens.sizes[40] : tokens.sizes[26]};
-        height: ${p.size === "default" ? tokens.sizes[40] : tokens.sizes[26]};
+        width: ${p.size === 'default' ? tokens.sizes[40] : tokens.sizes[26]};
+        height: ${p.size === 'default' ? tokens.sizes[40] : tokens.sizes[26]};
 
         svg {
-          width: ${p.size === "default" ? tokens.sizes[24] : tokens.sizes[16]};
-          height: ${p.size === "default" ? tokens.sizes[24] : tokens.sizes[16]};
+          width: ${p.size === 'default' ? tokens.sizes[24] : tokens.sizes[16]};
+          height: ${p.size === 'default' ? tokens.sizes[24] : tokens.sizes[16]};
         }
       }
     `}
@@ -192,20 +192,20 @@ export const ButtonText = styled.span`
   font-weight: ${tokens.fontWeights.bold};
 `;
 
-export const IconLabel = styled.span<Pick<ButtonProps, "size">>`
+export const IconLabel = styled.span<Pick<ButtonProps, 'size'>>`
   color: ${buttonTheme.icon.label};
   font-size: ${tokens.textSizes.info.fontSize};
   text-align: center;
   transition-property: font-size, color, opacity;
   transition-duration: ${tokens.transitionDurations.base};
   transition-timing-function: ease;
-  margin-top: ${(p) => (p.size === "default" ? tokens.sizes[8] : 0)};
-  opacity: ${(p) => (p.size === "default" ? 1 : 0)};
-  pointer-events: ${(p) => (p.size === "default" ? "auto" : "none")};
+  margin-top: ${(p) => (p.size === 'default' ? tokens.sizes[8] : 0)};
+  opacity: ${(p) => (p.size === 'default' ? 1 : 0)};
+  pointer-events: ${(p) => (p.size === 'default' ? 'auto' : 'none')};
 
   ${mq(768)} {
     font-size: ${(p) =>
-      p.size === "default"
+      p.size === 'default'
         ? tokens.textSizes.small.fontSize
         : tokens.textSizes.none.fontSize};
   }
@@ -220,17 +220,17 @@ const rotate360 = keyframes`
   }
 `;
 
-export const Spinner = styled.div<{ variant?: ButtonVariants }>`
+export const Spinner = styled.div<{variant?: ButtonVariants}>`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
   border-top: ${tokens.sizes[2]} solid
-    ${(p) => buttonTheme[p.variant ?? "contained"].barBackgroundColor};
+    ${(p) => buttonTheme[p.variant ?? 'contained'].barBackgroundColor};
   border-right: ${tokens.sizes[2]} solid
-    ${(p) => buttonTheme[p.variant ?? "contained"].barBackgroundColor};
+    ${(p) => buttonTheme[p.variant ?? 'contained'].barBackgroundColor};
   border-bottom: ${tokens.sizes[2]} solid
-    ${(p) => buttonTheme[p.variant ?? "contained"].barBackgroundColor};
+    ${(p) => buttonTheme[p.variant ?? 'contained'].barBackgroundColor};
   border-left: ${tokens.sizes[4]} solid
-    ${(p) => buttonTheme[p.variant ?? "contained"].barColor};
+    ${(p) => buttonTheme[p.variant ?? 'contained'].barColor};
   background: transparent;
   width: ${tokens.sizes[24]};
   height: ${tokens.sizes[24]};

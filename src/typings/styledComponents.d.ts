@@ -1,6 +1,6 @@
 import * as styled from 'styled-components';
 
-import { ThemeName } from '../theme/theme';
+import {ThemeName} from '../theme/theme';
 
 type ThemeInterface = {
   currentTheme: ThemeName;

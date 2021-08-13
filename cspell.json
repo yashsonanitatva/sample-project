@@ -23,5 +23,14 @@
     ".gitignore",
     "**.spec.ts"
   ],
-  "words": []
+  "words": [
+    "formik",
+    "vercel",
+    "testid",
+    "languagedetector",
+    "commitlint",
+    "persistor",
+    "yash",
+    "vijay"
+  ]
 }

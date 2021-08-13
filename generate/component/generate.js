@@ -1,4 +1,4 @@
-const log = require('../log');
+const log = require('../log.js');
 
 module.exports.setGenerator = function (plop) {
   // Controller generator
@@ -12,56 +12,65 @@ module.exports.setGenerator = function (plop) {
         validate(value) {
           let message = true;
           if (!/.+/.test(value)) {
-            message = log.formatError('Missing', 'you must define a component name');
+            message = log.formatError(
+              'Missing',
+              'you must define a component name'
+            );
           }
 
           return message;
-        },
-      },
+        }
+      }
     ],
     actions() {
       return [
         {
           type: 'add',
           path: 'src/components/{{pascalCase name}}/index.ts',
-          templateFile: 'generate/component/templates/index.hbs',
+          templateFile: 'generate/component/templates/index.hbs'
         },
         {
           type: 'add',
           path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
-          templateFile: 'generate/component/templates/component.hbs',
+          templateFile: 'generate/component/templates/component.hbs'
         },
         {
           type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.styles.ts',
-          templateFile: 'generate/component/templates/styles.hbs',
+          path:
+            'src/components/{{pascalCase name}}/{{pascalCase name}}.styles.ts',
+          templateFile: 'generate/component/templates/styles.hbs'
         },
         {
           type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.theme.ts',
-          templateFile: 'generate/component/templates/theme.hbs',
+          path:
+            'src/components/{{pascalCase name}}/{{pascalCase name}}.theme.ts',
+          templateFile: 'generate/component/templates/theme.hbs'
         },
         {
           type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
-          templateFile: 'generate/component/templates/story.hbs',
+          path:
+            'src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          templateFile: 'generate/component/templates/story.hbs'
         },
         {
           type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.models.tsx',
-          templateFile: 'generate/component/templates/models.hbs',
+          path:
+            'src/components/{{pascalCase name}}/{{pascalCase name}}.models.tsx',
+          templateFile: 'generate/component/templates/models.hbs'
         },
         {
           type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.i18n.ts',
-          templateFile: 'generate/component/templates/i18n.hbs',
+          path:
+            'src/components/{{pascalCase name}}/{{pascalCase name}}.i18n.ts',
+          templateFile: 'generate/component/templates/i18n.hbs'
         },
         {
           type: 'add',
-          path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
-          templateFile: 'generate/component/templates/test.hbs',
-        },
+          path:
+            'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
+          templateFile: 'generate/component/templates/test.hbs'
+        }
       ];
-    },
+    }
   });
 };

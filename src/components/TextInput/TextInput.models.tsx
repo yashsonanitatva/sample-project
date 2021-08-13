@@ -1,11 +1,11 @@
-import { Except } from "type-fest";
+import {Except} from 'type-fest';
 
 export interface TextInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   /**
    * Aside from the standard functionality of the `name` prop in HTML, test id and analytics event names will be generated using the value given for this.
    */
-  name: HTMLInputElement["name"];
+  name: HTMLInputElement['name'];
   /**
    * Optional prop to make it a controlled component
    * @default undefined
@@ -15,7 +15,7 @@ export interface TextInputProps
    * Optional prop to disable the text input
    * @default false
    */
-  disabled?: HTMLInputElement["disabled"];
+  disabled?: HTMLInputElement['disabled'];
   /**
    * Label for the input
    * @default undefined
@@ -43,7 +43,7 @@ export interface TextInputProps
   fullWidth?: boolean;
 }
 
-export interface TextLabelProps extends Omit<InputStateProps, "focused"> {
+export interface TextLabelProps extends Omit<InputStateProps, 'focused'> {
   /**
    * True when input is either focused or has text value
    */
@@ -65,7 +65,7 @@ export interface InputStateProps {
   disabled: boolean;
 }
 
-export type HtmlInputProps = Except<InputStateProps, "focused"> & {
+export type HtmlInputProps = Except<InputStateProps, 'focused'> & {
   /**
    * If set to true, it will occupy all available parent width space as opposed to its
    * default behaviour of keeping a fixed width

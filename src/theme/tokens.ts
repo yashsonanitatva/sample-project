@@ -7,7 +7,7 @@ const palette = {
     /**
      * #FFD566
      */
-    1: '#FFD566',
+    1: '#FFD566'
   },
   midnightBlue: {
     /**
@@ -22,7 +22,7 @@ const palette = {
     /**
      * #090a13
      */
-    2: '#090a13',
+    2: '#090a13'
   },
   skyBlue: {
     /**
@@ -64,7 +64,7 @@ const palette = {
     /**
      * #3260B0
      */
-    9: '#3260B0',
+    9: '#3260B0'
   },
   seaGreen: {
     /**
@@ -106,7 +106,7 @@ const palette = {
     /**
      * #185D61
      */
-    9: '#185D61',
+    9: '#185D61'
   },
   grey: {
     /**
@@ -148,7 +148,7 @@ const palette = {
     /**
      * #363842
      */
-    9: '#363842',
+    9: '#363842'
   },
   red: {
     /**
@@ -166,7 +166,7 @@ const palette = {
     /**
      * #FF6C65
      */
-    3: '#FF6C65',
+    3: '#FF6C65'
   },
   yellow: {
     /**
@@ -176,26 +176,26 @@ const palette = {
     /**
      * #FF9C00
      */
-    1: '#FF9C00',
+    1: '#FF9C00'
   },
   green: {
     /**
      * #0BA866
      */
-    0: '#0BA866',
+    0: '#0BA866'
   },
   white: {
     /**
      * #FFFFFF
      */
-    0: '#FFFFFF',
+    0: '#FFFFFF'
   },
   black: {
     /**
      * #000000
      */
-    0: '#000000',
-  },
+    0: '#000000'
+  }
 };
 
 const alpha = {
@@ -299,7 +299,7 @@ const alpha = {
   3: '08',
   2: '05',
   1: '03',
-  0: '00',
+  0: '00'
 };
 
 const sizes = {
@@ -431,7 +431,7 @@ const sizes = {
   /**
    * 1440px
    */
-  '7xl': '90rem',
+  '7xl': '90rem'
 };
 
 const zIndices = {
@@ -490,7 +490,7 @@ const zIndices = {
   /**
    * 9999
    */
-  9999: 9999,
+  9999: 9999
 };
 
 const breakpoints = {
@@ -537,7 +537,7 @@ const breakpoints = {
   /**
    * 2560px
    */
-  2560: '160rem',
+  2560: '160rem'
 };
 
 const transitionDurations = {
@@ -552,7 +552,7 @@ const transitionDurations = {
   /**
    * 200ms
    */
-  fast: '200ms',
+  fast: '200ms'
 };
 
 const fontWeights = {
@@ -567,7 +567,7 @@ const fontWeights = {
   /**
    * Black - 700
    */
-  black: 700,
+  black: 700
 };
 
 const textSizes: Record<
@@ -594,28 +594,28 @@ const textSizes: Record<
    */
   normal: {
     fontSize: '1rem',
-    lineHeight: '1.75',
+    lineHeight: '1.75'
   },
   /**
    * Normal - 10px
    */
   small: {
     fontSize: '0.625rem',
-    lineHeight: '1.8',
+    lineHeight: '1.8'
   },
   /**
    * Info Label - 13px;
    */
   info: {
     fontSize: '0.8125rem',
-    lineHeight: '1.2',
+    lineHeight: '1.2'
   },
   /**
    * None
    */
   none: {
     fontSize: '0rem',
-    lineHeight: '0',
+    lineHeight: '0'
   },
   /**
    * H1 - 32px
@@ -627,8 +627,8 @@ const textSizes: Record<
       /**
        * 36px
        */
-      768: '2.25rem',
-    },
+      768: '2.25rem'
+    }
   },
   /**
    * H2 - 22px, 32px
@@ -636,7 +636,7 @@ const textSizes: Record<
   h2: {
     fontSize: '2rem',
     lineHeight: '1.3',
-    responsiveFontSize: { 768: '1.375rem' },
+    responsiveFontSize: {768: '1.375rem'}
   },
   /**
    * H3 - 20px, 25px
@@ -644,15 +644,15 @@ const textSizes: Record<
   h3: {
     fontSize: '1.5625rem',
     lineHeight: '1.4',
-    responsiveFontSize: { 768: '1.25rem' },
+    responsiveFontSize: {768: '1.25rem'}
   },
   /**
    * H4 - 22
    */
   h4: {
     fontSize: '1.375rem',
-    lineHeight: '1.4',
-  },
+    lineHeight: '1.4'
+  }
 };
 
 export type Breakpoints = keyof typeof breakpoints;
@@ -672,5 +672,5 @@ export const tokens = {
   zIndices,
   palette,
   fontWeights,
-  textSizes,
+  textSizes
 };

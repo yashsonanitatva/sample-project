@@ -1,6 +1,6 @@
-import { createComponentTheme } from "@theme/createComponentTheme";
-import { tokens } from "@theme/tokens";
-import { ButtonVariants } from "./Button.models";
+import {createComponentTheme} from '@theme/createComponentTheme';
+import {tokens} from '@theme/tokens';
+import {ButtonVariants} from './Button.models';
 
 const palette = tokens.palette;
 
@@ -31,18 +31,18 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
       label: palette.midnightBlue[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
       disabledBg: palette.grey[2],
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
       barBackgroundColor: palette.grey[3],
-      barColor: palette.black[0],
+      barColor: palette.black[0]
     },
     outlined: {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       label: palette.midnightBlue[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
@@ -54,52 +54,52 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
       barBackgroundColor: palette.grey[3],
-      barColor: palette.black[0],
+      barColor: palette.black[0]
     },
     squared: {
       backgroundColor: palette.mango[0],
       label: palette.midnightBlue[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
       disabledBg: palette.grey[2],
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
       barBackgroundColor: palette.grey[3],
-      barColor: palette.black[0],
+      barColor: palette.black[0]
     },
     icon: {
       backgroundColor: palette.mango[0],
       label: palette.midnightBlue[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
       disabledBg: palette.grey[2],
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
-      barBackgroundColor: "transparent",
-      barColor: "transparent",
+      barBackgroundColor: 'transparent',
+      barColor: 'transparent'
     },
     link: {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       label: palette.midnightBlue[0],
-      hoverBg: "transparent",
+      hoverBg: 'transparent',
       hoverLabel: palette.midnightBlue[1],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
-      disabledBg: "transparent",
+      disabledBg: 'transparent',
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
-      barBackgroundColor: "transparent",
-      barColor: "transparent",
+      barBackgroundColor: 'transparent',
+      barColor: 'transparent'
     },
     pill: {
       backgroundColor: palette.grey[0],
@@ -113,9 +113,9 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
       disabledBorder: palette.grey[2],
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
-      barBackgroundColor: "transparent",
-      barColor: "transparent",
-    },
+      barBackgroundColor: 'transparent',
+      barColor: 'transparent'
+    }
   },
   dark: {
     icon: {
@@ -123,48 +123,48 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
       label: palette.grey[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
       disabledBg: palette.grey[2],
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
-      barBackgroundColor: "transparent",
-      barColor: "transparent",
+      barBackgroundColor: 'transparent',
+      barColor: 'transparent'
     },
     link: {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       label: palette.grey[0],
-      hoverBg: "transparent",
+      hoverBg: 'transparent',
       hoverLabel: palette.grey[1],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
-      disabledBg: "transparent",
+      disabledBg: 'transparent',
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
-      barBackgroundColor: "transparent",
-      barColor: "transparent",
+      barBackgroundColor: 'transparent',
+      barColor: 'transparent'
     },
     contained: {
       backgroundColor: palette.mango[0],
       label: palette.midnightBlue[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
       disabledBg: palette.grey[2],
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
       barBackgroundColor: palette.grey[3],
-      barColor: palette.black[0],
+      barColor: palette.black[0]
     },
     outlined: {
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       label: palette.mango[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
@@ -176,22 +176,22 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
       barBackgroundColor: palette.grey[3],
-      barColor: palette.black[0],
+      barColor: palette.black[0]
     },
     squared: {
       backgroundColor: palette.mango[0],
       label: palette.midnightBlue[0],
       hoverBg: palette.mango[1],
       hoverLabel: palette.midnightBlue[0],
-      border: "none",
+      border: 'none',
       focus: palette.white[0],
       disabledBg: palette.grey[2],
       disabledLabel: palette.grey[6],
-      disabledBorder: "none",
+      disabledBorder: 'none',
       icon: palette.midnightBlue[0],
       iconHoverBg: palette.midnightBlue[0],
       barBackgroundColor: palette.grey[3],
-      barColor: palette.black[0],
+      barColor: palette.black[0]
     },
     pill: {
       backgroundColor: palette.midnightBlue[1],
@@ -205,8 +205,8 @@ export const buttonTheme = createComponentTheme<ButtonTheme>({
       disabledBorder: palette.grey[6],
       icon: palette.mango[0],
       iconHoverBg: palette.midnightBlue[0],
-      barBackgroundColor: "transparent",
-      barColor: "transparent",
-    },
-  },
+      barBackgroundColor: 'transparent',
+      barColor: 'transparent'
+    }
+  }
 });

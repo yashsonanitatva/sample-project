@@ -1,9 +1,10 @@
-import { Story } from "@storybook/react";
-import { Parameters } from "@storybook/react/types-6-0";
-import { BaseDecorators } from "@storybook/addons";
-import { StoryFnReactReturnType } from "@storybook/react/dist/ts3.9/client/preview/types";
-import { Provider } from "react-redux";
-import { store } from "@state/store";
+import React from 'react';
+import {Story} from '@storybook/react';
+import {Parameters} from '@storybook/react/types-6-0';
+import {BaseDecorators} from '@storybook/addons';
+import {StoryFnReactReturnType} from '@storybook/react/dist/ts3.9/client/preview/types';
+import {Provider} from 'react-redux';
+import {store} from '@state/store';
 
 type CustomParameters<S> = Parameters & {
   children?: React.ReactNode;

@@ -7,4 +7,5 @@ export type TestElementType =
   | 'navigation'
   | 'table';
 
-export const createTestId = (type: TestElementType, name: string) => `${type}-${kebabCase(name)}`;
+export const createTestId = (type: TestElementType, name: string) =>
+  `${type}-${kebabCase(name)}`;

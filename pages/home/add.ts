@@ -1,1 +1,1 @@
-export { default } from '@pages/Home/HomeForm/HomeForm';
+export {default} from '@pages/Home/HomeForm/HomeForm';

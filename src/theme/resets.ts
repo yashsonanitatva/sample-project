@@ -1,7 +1,7 @@
-import { css } from 'styled-components';
+import {css} from 'styled-components';
 
-import { globalStyleTheme } from './globalStyle';
-import { tokens } from './tokens';
+import {globalStyleTheme} from './globalStyle';
+import {tokens} from './tokens';
 
 export const inputReset = css`
   background: transparent;

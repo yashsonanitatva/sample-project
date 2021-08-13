@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { Root, Thumb } from "@radix-ui/react-switch";
+import styled from 'styled-components';
+import {Root, Thumb} from '@radix-ui/react-switch';
 
-import { tokens } from "@theme/tokens";
-import { toggleTheme } from "./Toggle.theme";
+import {tokens} from '@theme/tokens';
+import {toggleTheme} from './Toggle.theme';
 
 export const StyledSwitch = styled(Root)`
   appearance: none;
@@ -21,7 +21,7 @@ export const StyledSwitch = styled(Root)`
       ${tokens.sizes[1]} ${toggleTheme.outlineColor};
   }
 
-  &[data-state="checked"] {
+  &[data-state='checked'] {
     background-color: ${toggleTheme.activeBackgroundColor};
   }
 
@@ -42,7 +42,7 @@ export const StyledThumb = styled(Thumb)`
   will-change: transform;
   transform: translateX(${tokens.sizes[2]});
 
-  &[data-state="checked"] {
+  &[data-state='checked'] {
     transform: translateX(${tokens.sizes[22]});
   }
 

@@ -1,13 +1,13 @@
-import styled, { css } from "styled-components";
+import styled, {css} from 'styled-components';
 
-import { tokens } from "@theme/tokens";
-import { HtmlInputProps, TextLabelProps } from "./TextInput.models";
-import { textInputTheme } from "./TextInput.theme";
-import { textInputTokens } from "./TextInput.tokens";
-import { mq } from "@theme/mediaQueries";
-import { inputReset } from "@theme/resets";
+import {tokens} from '@theme/tokens';
+import {HtmlInputProps, TextLabelProps} from './TextInput.models';
+import {textInputTheme} from './TextInput.theme';
+import {textInputTokens} from './TextInput.tokens';
+import {mq} from '@theme/mediaQueries';
+import {inputReset} from '@theme/resets';
 
-export const TextInputContainer = styled.div<{ $fullWidth?: boolean }>`
+export const TextInputContainer = styled.div<{$fullWidth?: boolean}>`
   width: fit-content;
   ${(p) =>
     p.$fullWidth &&

@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-export const getUserList = () => {
-	return axios.get('https://jsonplaceholder.typicode.com/users');
+export const getUserList = async () => {
+  return axios.get('https://jsonplaceholder.typicode.com/users');
 };

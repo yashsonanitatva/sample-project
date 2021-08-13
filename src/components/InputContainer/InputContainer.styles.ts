@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
-import { tokens } from '@theme/tokens';
-import { InputContainerProps } from './InputContainer.models';
-import { inputContainerTheme } from './InputContainer.theme';
+import {tokens} from '@theme/tokens';
+import {InputContainerProps} from './InputContainer.models';
+import {inputContainerTheme} from './InputContainer.theme';
 
 // Need to shorten line size, so ts-styled-plugin doesn't freak out
 const Z = `${tokens.sizes[0]} ${tokens.sizes[2]} ${tokens.sizes[0]} ${tokens.sizes[0]}`;
 
-const getBorderColor = (focused: boolean, error: boolean, disabled: boolean) => {
+const getBorderColor = (
+  focused: boolean,
+  error: boolean,
+  disabled: boolean
+) => {
   if (disabled) {
     return inputContainerTheme.disabled.borderColor;
   }

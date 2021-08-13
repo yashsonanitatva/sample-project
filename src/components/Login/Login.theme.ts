@@ -1,7 +1,7 @@
-import { createComponentTheme } from "@theme/createComponentTheme";
-import { tokens } from "@theme/tokens";
+import {createComponentTheme} from '@theme/createComponentTheme';
+import {tokens} from '@theme/tokens';
 
-const { palette } = tokens;
+const {palette} = tokens;
 
 type LoginTheme = {
   backgroundColor: string;
@@ -10,13 +10,13 @@ type LoginTheme = {
 
 const loginTheme = createComponentTheme<LoginTheme>({
   dark: {
-    backgroundColor: "transparent",
-    borderColor: palette.grey[0],
+    backgroundColor: 'transparent',
+    borderColor: palette.grey[0]
   },
   light: {
-    backgroundColor: "transparent",
-    borderColor: palette.midnightBlue[0],
-  },
+    backgroundColor: 'transparent',
+    borderColor: palette.midnightBlue[0]
+  }
 });
 
-export { loginTheme };
+export {loginTheme};

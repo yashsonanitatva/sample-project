@@ -1,26 +1,26 @@
-import { Meta } from "@storybook/react/types-6-0";
+import {Meta} from '@storybook/react/types-6-0';
 
-import { templateForComponent } from "@lib/templateHelper";
+import {templateForComponent} from '@lib/templateHelper';
 
-import Login from "./Login";
+import Login from './Login';
 
 const meta: Meta = {
-  title: "Components/Login",
-  component: Login,
+  title: 'Components/Login',
+  component: Login
 };
 
 export default meta;
 
 const template = templateForComponent(Login, {
-  layout: "padded",
+  layout: 'padded',
   design: {
-    type: "figma",
-    url: "https://www.figma.com/file/…",
+    type: 'figma',
+    url: 'https://www.figma.com/file/…'
   },
   sharedProps: {
-    userName: "a",
-    password: "test",
-  },
+    userName: 'a',
+    password: 'test'
+  }
 });
 
 export const Default = template({});

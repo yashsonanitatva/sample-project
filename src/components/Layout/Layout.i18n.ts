@@ -1,8 +1,8 @@
-import i18next from "i18next";
+import i18next from 'i18next';
 
-import "@lib/i18n/config";
+import '@lib/i18n/config';
 
-i18next.addResourceBundle("en-GB", "Layout", {
-  help: "Help",
-  myAccount: "My account",
+i18next.addResourceBundle('en-GB', 'Layout', {
+  help: 'Help',
+  myAccount: 'My account'
 });

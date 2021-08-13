@@ -1,6 +1,6 @@
-import { createGlobalStyle, css } from "styled-components";
-import { createComponentTheme } from "./createComponentTheme";
-import { tokens } from "./tokens";
+import {createGlobalStyle, css} from 'styled-components';
+import {createComponentTheme} from './createComponentTheme';
+import {tokens} from './tokens';
 
 type GlobalStyleTheme = {
   backgroundColor: string;
@@ -12,19 +12,19 @@ export const globalStyleTheme = createComponentTheme<GlobalStyleTheme>({
   dark: {
     backgroundColor: tokens.palette.midnightBlue[1],
     color: tokens.palette.grey[0],
-    mark: tokens.palette.mango[0],
+    mark: tokens.palette.mango[0]
   },
   light: {
     backgroundColor: tokens.palette.grey[0],
     color: tokens.palette.midnightBlue[1],
-    mark: tokens.palette.mango[0],
-  },
+    mark: tokens.palette.mango[0]
+  }
 });
 
 /** Using css gives formatting */
 export const styles = css`
   * {
-    font-family: "Times New Roman", sans-serif;
+    font-family: 'Times New Roman', sans-serif;
   }
 
   /* Box sizing rules */
@@ -47,12 +47,12 @@ export const styles = css`
   dd {
     margin: 0;
     font-size: 1rem;
-    font-family: "Times New Roman", sans-serif;
+    font-family: 'Times New Roman', sans-serif;
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-  ul[role="list"],
-  ol[role="list"] {
+  ul[role='list'],
+  ol[role='list'] {
     list-style: none;
   }
 
@@ -128,4 +128,4 @@ const GlobalStyle = createGlobalStyle`
 ${styles}
 `;
 
-export { GlobalStyle };
+export {GlobalStyle};

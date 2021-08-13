@@ -1,13 +1,13 @@
-import React, { FunctionComponent } from "react";
+import React, {FunctionComponent} from 'react';
 
-import { AbsoluteContainer, ThemeToggleButton } from "./ThemeToggle.styles";
-import { ThemeToggleProps } from "./ThemeToggle.models";
+import {AbsoluteContainer, ThemeToggleButton} from './ThemeToggle.styles';
+import {ThemeToggleProps} from './ThemeToggle.models';
 
 /**
  * This component is for dev purposes only
  */
 const ThemeToggle: FunctionComponent<ThemeToggleProps> = (props) => {
-  const { toggleTheme } = props;
+  const {toggleTheme} = props;
 
   return (
     <AbsoluteContainer>

@@ -1,13 +1,13 @@
-import { FunctionComponent, useCallback } from "react";
-import useUid from "@lib/hooks/useUid";
-import { ButtonProps } from "./Button.models";
+import {FunctionComponent, useCallback} from 'react';
+import useUid from '@lib/hooks/useUid';
+import {ButtonProps} from './Button.models';
 import {
   ButtonContainer,
   ButtonText,
   IconLabel,
   StyledButton,
-  Spinner,
-} from "./Button.styles";
+  Spinner
+} from './Button.styles';
 
 /**
  * A primary button element.
@@ -21,16 +21,16 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
     children,
     busy = false,
     disabled = false,
-    variant = "contained",
-    type = "button",
-    size = "default",
+    variant = 'contained',
+    type = 'button',
+    size = 'default',
     onClick,
     Icon,
     fullWidth,
     ...rest
   } = props;
 
-  const uid = useUid("button", name);
+  const uid = useUid('button', name);
 
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -60,13 +60,13 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
       >
         {busy ? (
           <Spinner />
-        ) : variant === "icon" && Icon ? (
+        ) : variant === 'icon' && Icon ? (
           <Icon />
         ) : (
           children ?? <ButtonText>{label}</ButtonText>
         )}
       </StyledButton>
-      {variant === "icon" && <IconLabel size={size}>{label}</IconLabel>}
+      {variant === 'icon' && <IconLabel size={size}>{label}</IconLabel>}
     </ButtonContainer>
   );
 };

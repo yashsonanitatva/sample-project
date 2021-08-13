@@ -1,7 +1,7 @@
-import { tokens } from "@theme/tokens";
-import styled from "styled-components";
+import {tokens} from '@theme/tokens';
+import styled from 'styled-components';
 
-import { loginTheme } from "./Login.theme";
+import {loginTheme} from './Login.theme';
 
 export const LoginContainer = styled.div`
   background-color: ${loginTheme.backgroundColor};

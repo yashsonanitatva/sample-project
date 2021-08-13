@@ -1,18 +1,18 @@
-import { Meta } from '@storybook/react/types-6-0';
+import {Meta} from '@storybook/react/types-6-0';
 
-import { templateForComponent } from '@lib/templateHelper';
+import {templateForComponent} from '@lib/templateHelper';
 import Layout from './Layout';
 
 const meta: Meta = {
   title: 'Components/Layout',
-  component: Layout,
+  component: Layout
 };
 
 export default meta;
 
 const template = templateForComponent(Layout, {
   layout: 'padded',
-  sharedProps: {},
+  sharedProps: {}
 });
 
 export const LayoutStory = template({});
