@@ -16,7 +16,7 @@ const HomeForm: FunctionComponent = () => {
   const router = useRouter();
   const userList = useSelector((state: IState) => state.user.list);
   const data: any = new URLSearchParams(window.location.search).get('data');
-  const user = JSON.parse((data as string) ?? '');
+  const user = JSON.parse(data as string);
 
   const handleSubmit = (values: any) => {
     if (user?.id) {
